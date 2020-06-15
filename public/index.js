@@ -20,6 +20,22 @@ fetch("/api/transaction")
     populateTotal();
     populateTable();
     populateChart();
+  })
+  .catch(err => {
+    request.onsuccess = ({ target }) => {
+      db = target.result;
+      // check if app is online before reading from db
+      const transaction = db.transaction(["pending"], "readwrite");
+      const store = transaction.objectStore("pending");
+      const getAll = store.getAll();
+
+      getAll.onsuccess = function() {
+        transactions = getAll.result;
+        populateTotal();
+        populateTable();
+        populateChart();
+      };
+    };
   });
 
 function populateTotal() {

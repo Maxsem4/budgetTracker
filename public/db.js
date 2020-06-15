@@ -15,6 +15,7 @@ request.onupgradeneeded = ({ target }) => {
 
 request.onsuccess = ({ target }) => {
   db = target.result;
+  console.log(db);
 
   // check if app is online before reading from db
   if (navigator.onLine) {
