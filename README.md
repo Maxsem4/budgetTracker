@@ -24,6 +24,8 @@ Offline entries should be added to tracker.
 
 ## 🚀 How to Use?
 
+https://frozen-woodland-94568.herokuapp.com/
+
 ## 🤝 Contributing
 
 Contributions, issues and feature requests are welcome.<br />
